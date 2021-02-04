@@ -26,12 +26,13 @@ const assertArraysEqual = function (array1, array2) {
 };
 
 const middle = function (array) {
-  if (array.length % 2 === 0) {
-    return 'who cares'
+  const mid = array.length / 2;
+  if (array.length > 2 && array.length % 2 === 0) {
+    return [array[mid - 1], array[mid]];
   } else if (array.length <= 2) {
     return [];
   }
-  return 'frig'
+  return array[Math.floor(mid)];
 };
 
 assertArraysEqual(middle([1]), []);
