@@ -63,8 +63,6 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-// const ab = { a: "1", b: "2" };
-// const ba = { b: "2", a: "1" };
-// assertObjectsEqual(eqObjects(ab, ba), true);
+
 console.log(assertObjectsEqual({ a: "1", b: "2" }, { b: "2", a: "1" }));
 console.log(assertObjectsEqual({ a: "1", b: "4" }, { b: "2", a: "1" }));
