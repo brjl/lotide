@@ -1,4 +1,4 @@
-const eqArrays = function (array1, array2) {
+const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -10,7 +10,7 @@ const eqArrays = function (array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function (array1, array2) {
+const assertArraysEqual = function(array1, array2) {
   const pass = String.fromCodePoint(0x1f60d);
   const fail = String.fromCodePoint(0x1f631);
 
@@ -25,8 +25,13 @@ const assertArraysEqual = function (array1, array2) {
   }
 };
 
-const flatten = function (array) {};
+const flatten =(array) => {
+  let newArray = array.reduce(
+    (accumulator, element) => accumulator.concat(element),
+    []
+  );
 
-// };
+  return newArray;
+};
 
-flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]], [1, 2, 3, 4, 5, 6]));
